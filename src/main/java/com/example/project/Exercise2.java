@@ -14,21 +14,24 @@ public class Exercise2 {
 
     public boolean existenDuplicados(String str) {
         MyStack<Character> stack = new LinkedListStack<>();
-        // Colocar codigo aqui
-
+        
+        //dividimos el arreglo
         char[] arreglo = dividirString(str);
+        
         for(int i = 0; i<arreglo.length;i++) { 
-            
+            /*si el elemento que se va a probar es de cierre se 
+            * retiene el superior y se observa el que esta debajo
+            */
             if (arreglo[i] == ')') { 
                 
-                char top = stack.top(); 
+                char cabeza = stack.top(); 
                 stack.pop(); 
   
                 int elementsInside = 0; 
-                
-                while (top != '(') { 
+                //comprueba que no existan mas elementos repetidos de parentesis.
+                while (cabeza != '(') { 
                     elementsInside++; 
-                    top = stack.top(); 
+                    cabeza = stack.top(); 
                     stack.pop(); 
                 } 
                 
