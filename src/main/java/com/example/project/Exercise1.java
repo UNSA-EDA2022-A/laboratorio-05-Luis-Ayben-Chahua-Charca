@@ -17,7 +17,9 @@ public class Exercise1 {
         MyStack<Character> stack = new LinkedListStack<>();
         
 
-
+        if (s.length()%2==1){
+            return false;
+        }
         char[] arreglo = dividirString(s);
         // aqui si repide en cada elemento el proceso
         for(int i =0 ; i<arreglo.length;i++){
@@ -41,7 +43,7 @@ public class Exercise1 {
                 }
             }
         }
-        return false;
+        return true;
     }
 
     //funcion que traslada todos los caracteres del string a un arreglo
